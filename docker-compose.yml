@@ -1,0 +1,10 @@
+version: "3"
+services:
+  plain-www:
+    build: .
+    container_name: plain-www
+    command: ["python3", "/app/httpd.py", "-r", "/app/tests/", "-w", "4"]
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/app
